@@ -35,5 +35,6 @@ class CreateProgrammingsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('programmings');
+        
     }
 }

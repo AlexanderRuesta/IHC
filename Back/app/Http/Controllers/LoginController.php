@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 use App\Student;
 use App\Teacher;
-
+use App\Programming;
 
 use Illuminate\Http\Request;
 
@@ -28,18 +28,26 @@ class LoginController extends Controller
                             ['password', '=', $password],
                     ])->first();
         
-        
         $teacher = Teacher::where([
                         ['email', '=', $username],
                         ['password', '=', $password],
                  ])->first();        
         
-        $programmings = $student->programmings;
         
+        $programmings = $student->programmings;
+        $programmings_sin_pivote = array();
+       
         foreach ($programmings as $key => $value) {
-            echo json_encode($programmings[$key]);
+            $programming = Programming::where([
+                ['id', '=', $value->id],
+            ])->first();
+             array_push($programmings_sin_pivote,$programming);   
         }
-
+           
+        foreach ($programmings_sin_pivote as $key => $value) {
+            echo json_encode($value->courses);
+        }
+        // echo json_encode($programmings_sin_pivote->courses);
 
         if($student !== null){
             // return array('tipo'=>1,'usuario' => $student);
