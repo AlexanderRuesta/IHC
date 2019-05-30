@@ -43,11 +43,12 @@ class LoginController extends Controller
             ])->first();
              array_push($programmings_sin_pivote,$programming);   
         }
-           
+
+        $courses = array();
         foreach ($programmings_sin_pivote as $key => $value) {
-            echo json_encode($value->courses);
+            array_push($courses,$value->courses);
         }
-        // echo json_encode($programmings_sin_pivote->courses);
+        echo json_encode($courses);
 
         if($student !== null){
             // return array('tipo'=>1,'usuario' => $student);

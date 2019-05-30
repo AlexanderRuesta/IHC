@@ -11,7 +11,9 @@ class Programming extends Model
 
     public function courses()
     {
-        return $this->hasMany(Course::class);
+        // return $this->hasMany(Course::class);
+        return $this->belongsToMany(Course::class, 'programmings', 'id', 'course_id');
+
     }
 
     public function teachers()
