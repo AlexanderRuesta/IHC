@@ -10,12 +10,6 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {   
-    // protected $request;
-
-    // public function __construct(Request $request){
-    //     $this->request = $request;
-    // }
-
 
     public function login(Request $request)
     {   
@@ -35,7 +29,6 @@ class LoginController extends Controller
         
         
         $programmings = $student->programmings;
-        $programmings_sin_pivote = array();
        
         foreach ($programmings as $key => $value) {
             $value->courses;
