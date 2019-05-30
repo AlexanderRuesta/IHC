@@ -38,20 +38,13 @@ class LoginController extends Controller
         $programmings_sin_pivote = array();
        
         foreach ($programmings as $key => $value) {
-            $programming = Programming::where([
-                ['id', '=', $value->id],
-            ])->first();
-             array_push($programmings_sin_pivote,$programming);   
+            $value->courses;
+            $value->teachers;
+            $value->documents;
         }
-
-        $courses = array();
-        foreach ($programmings_sin_pivote as $key => $value) {
-            array_push($courses,$value->courses);
-        }
-        echo json_encode($courses);
 
         if($student !== null){
-            // return array('tipo'=>1,'usuario' => $student);
+            return array('tipo'=>1,'usuario' => $student);
         }
         else if($teacher !== null){
             return array('tipo'=>0,'usuario' => $teacher);

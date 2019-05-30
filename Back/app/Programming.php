@@ -11,14 +11,14 @@ class Programming extends Model
 
     public function courses()
     {
-        // return $this->hasMany(Course::class);
-        return $this->belongsToMany(Course::class, 'programmings', 'id', 'course_id');
+        return $this->hasMany(Course::class,'id','course_id');
+        // return $this->belongsToMany(Course::class, 'programmings', 'id', 'course_id');
 
     }
 
     public function teachers()
     {
-        return $this->hasMany(Teacher::class);
+        return $this->hasMany(Teacher::class,'id','teacher_id');
     }
 
     public function students()
@@ -28,7 +28,7 @@ class Programming extends Model
 
     public function documents()
     {
-        return $this->belongsToMany(Document::class, 'programmings_documents', 'id' /* de roles */, 'id' /* de modules */);
+        return $this->belongsToMany(Document::class, 'programmings_documents', 'programming_id', 'document_id');
     }
 
 

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
-    public function programming()
+    public function programmings()
     {
-        return $this->belongsToMany(Programming::class, 'programmings_documents', 'id' /* de roles */, 'id' /* de modules */);
+        return $this->belongsToMany(Programming::class, 'programmings_documents', 'document_id', 'programming_id');
     }
 }
