@@ -1,4 +1,0 @@
-CREATE USER adminsav PASSWORD 'adminsav';
-ALTER ROLE adminsav WITH SUPERUSER;
-
-CREATE DATABASE VirtualClassroom OWNER = adminsav;
