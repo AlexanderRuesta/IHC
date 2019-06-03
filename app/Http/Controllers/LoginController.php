@@ -27,16 +27,19 @@ class LoginController extends Controller
                         ['password', '=', $password],
                  ])->first();        
         
-        
-        $programmings = $student->programmings;
        
-        foreach ($programmings as $key => $value) {
-            $value->courses;
-            $value->teachers;
-            $value->documents;
-        }
 
         if($student !== null){
+
+             
+              $programmings = $student->programmings;
+       
+                foreach ($programmings as $key => $value) {
+                    $value->courses;
+                    $value->teachers;
+                    $value->documents;
+                }
+
             return array('tipo'=>1,'usuario' => $student);
         }
         else if($teacher !== null){

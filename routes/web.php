@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/login/', 'LoginController@login');
 Route::get('/course/', 'CourseController@getCourse');
 Route::get('/student/', 'StudentController@getStudent');
+Route::get('/teacher/', 'TeacherController@getTeacher');
+
 
 
 

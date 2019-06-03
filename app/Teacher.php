@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
-    public function programming()
+    public function programmings()
     {
-        return $this->belongsTo(Programming::class);
+        return $this->belongsTo(Programming::class,'id','teacher_id');
     }
 }
