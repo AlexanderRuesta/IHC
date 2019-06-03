@@ -30,7 +30,7 @@ class TeacherController extends Controller
         }
         else{
             // return json_encode(null);
-            return respose()->json(null);
+            return response()->json(null);
         }
     }
 }
