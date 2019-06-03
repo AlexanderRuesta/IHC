@@ -40,13 +40,13 @@ class LoginController extends Controller
                     $value->documents;
                 }
 
-            return array('tipo'=>1,'usuario' => $student);
+            return response()->json(array('tipo'=>1,'usuario' => $student));
         }
         else if($teacher !== null){
-            return array('tipo'=>0,'usuario' => $teacher);
+            return response()->json(array('tipo'=>0,'usuario' => $teacher));
         }
         else{
-            return array('tipo'=>-1,'usuario' => 'No existe');
+            return response()->json(array('tipo'=>-1,'usuario' => 'No existe'));
         }
 
     }

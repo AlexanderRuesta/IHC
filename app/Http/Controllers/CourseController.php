@@ -18,11 +18,11 @@ class CourseController extends Controller
             
         if($course !== null)
         {
-            return $course;
+            return response()->json($course);
         }
         else{
             // return json_encode(null);
-            echo json_encode(null);
+            return response()->json(null);
         }
     }
 }

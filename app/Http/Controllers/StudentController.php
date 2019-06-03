@@ -17,11 +17,11 @@ class StudentController extends Controller
             
         if($student !== null)
         {
-            return $student;
+            return response()->json($student);
         }
         else{
             // return json_encode(null);
-            echo json_encode(null);
+            return response()->json(null);
         }
     }
 }

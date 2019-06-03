@@ -26,11 +26,11 @@ class TeacherController extends Controller
             //     // dd($value);
             //     // $value->courses;
             // }
-           return $teacher;
+           return response()->json($teacher);
         }
         else{
             // return json_encode(null);
-            echo json_encode(null);
+            return respose()->json(null);
         }
     }
 }
