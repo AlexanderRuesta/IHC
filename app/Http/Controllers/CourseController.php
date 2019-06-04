@@ -18,11 +18,13 @@ class CourseController extends Controller
             
         if($course !== null)
         {
-            return response()->json($course);
+            return response()->json($course)
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
         else{
             // return json_encode(null);
-            return response()->json(null);
+            return response()->json(null)
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
     }
 }

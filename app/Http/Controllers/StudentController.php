@@ -17,11 +17,13 @@ class StudentController extends Controller
             
         if($student !== null)
         {
-            return response()->json($student);
+            return response()->json($student)
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
         else{
             // return json_encode(null);
-            return response()->json(null);
+            return response()->json(null)
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
     }
 }

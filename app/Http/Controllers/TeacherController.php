@@ -26,11 +26,13 @@ class TeacherController extends Controller
             //     // dd($value);
             //     // $value->courses;
             // }
-           return response()->json($teacher);
+           return response()->json($teacher)
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
         else{
             // return json_encode(null);
-            return response()->json(null);
+            return response()->json(null)
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
     }
 }

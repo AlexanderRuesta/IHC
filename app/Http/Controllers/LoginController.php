@@ -42,15 +42,17 @@ class LoginController extends Controller
                     $value->documents;
                 }
 
-            // return response()->json(array('tipo'=>1,'usuario' => $student))
-            //                  ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
-            return $student;
+            return response()->json(array('tipo'=>1,'usuario' => $student))
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+            // return $student;
         }
         else if($teacher !== null){
-            return response()->json(array('tipo'=>0,'usuario' => $teacher));
+            return response()->json(array('tipo'=>0,'usuario' => $teacher))
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;
         }
         else{
-            return response()->json(array('tipo'=>-1,'usuario' => 'No existe'));
+            return response()->json(array('tipo'=>-1,'usuario' => 'No existe'))
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
 
     }
