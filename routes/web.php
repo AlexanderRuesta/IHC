@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login/', 'LoginController@login');
-Route::get('/course/', 'CourseController@getCourse');
-Route::get('/student/', 'StudentController@getStudent');
-Route::get('/teacher/', 'TeacherController@getTeacher');
+// Route::get('/login/', 'LoginController@login');
+// Route::get('/course/', 'CourseController@getCourse');
+// Route::get('/student/', 'StudentController@getStudent');
+// Route::get('/teacher/', 'TeacherController@getTeacher');
 
 
 

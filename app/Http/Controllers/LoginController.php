@@ -7,6 +7,8 @@ use App\Teacher;
 use App\Programming;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
 
 class LoginController extends Controller
 {   
@@ -40,7 +42,9 @@ class LoginController extends Controller
                     $value->documents;
                 }
 
-            return response()->json(array('tipo'=>1,'usuario' => $student));
+            return response()->json(array('tipo'=>1,'usuario' => $student))
+                             ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+            // return $student;
         }
         else if($teacher !== null){
             return response()->json(array('tipo'=>0,'usuario' => $teacher));
