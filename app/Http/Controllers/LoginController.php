@@ -25,7 +25,7 @@ class LoginController extends Controller
                     ])->first();
         
         $teacher = Teacher::where([
-                        ['email', '=', $username],
+                        ['email', '=', $username."@unmsm.edu.pe"],
                         ['password', '=', $password],
                  ])->first();        
         
