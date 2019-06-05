@@ -20,7 +20,7 @@ class LoginController extends Controller
         $password = $request->input('password');
 
         $student = Student::where([
-                            ['email', '=', $username],
+                            ['email', '=', $username."@unmsm.edu.pe"],
                             ['password', '=', $password],
                     ])->first();
         
