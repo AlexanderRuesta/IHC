@@ -47,6 +47,11 @@ class LoginController extends Controller
             // return $student;
         }
         else if($teacher !== null){
+
+            $programmings = $teacher->programmings;
+            $programmings->courses;
+            $programmings->documents;
+
             return response()->json(array('tipo'=>0,'usuario' => $teacher))
                              ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;
         }
