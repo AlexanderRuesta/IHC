@@ -12,7 +12,7 @@ class CourseController extends Controller
     
     public function getCourse(Request $request){
 
-        $course_id = $request->input('course_id');
+        $course_id = $request->input('id');
 
         $course = Course::where([
             ['id', '=', $course_id],
