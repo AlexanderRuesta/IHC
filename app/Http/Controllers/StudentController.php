@@ -18,7 +18,14 @@ class StudentController extends Controller
         ])->first();
             
         if($student !== null)
-        {
+        {   
+            $programmings = $student->programmings;
+       
+                foreach ($programmings as $key => $value) {
+                    $value->courses;
+                    $value->teachers;
+                    $value->documents;
+                }
             return response()->json($student)
                              ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }

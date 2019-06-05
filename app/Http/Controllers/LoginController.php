@@ -34,25 +34,25 @@ class LoginController extends Controller
         if($student !== null){
 
              
-              $programmings = $student->programmings;
+              // $programmings = $student->programmings;
        
-                foreach ($programmings as $key => $value) {
-                    $value->courses;
-                    $value->teachers;
-                    $value->documents;
-                }
+              //   foreach ($programmings as $key => $value) {
+              //       $value->courses;
+              //       $value->teachers;
+              //       $value->documents;
+              //   }
 
-            return response()->json(array('tipo'=>1,'usuario' => $student))
+            return response()->json(array('tipo'=>1,'usuario_id' => $student->id))
                              ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
             // return $student;
         }
         else if($teacher !== null){
 
-            $programmings = $teacher->programmings;
-            $programmings->courses;
-            $programmings->documents;
+            // $programmings = $teacher->programmings;
+            // $programmings->courses;
+            // $programmings->documents;
 
-            return response()->json(array('tipo'=>0,'usuario' => $teacher))
+            return response()->json(array('tipo'=>0,'usuario' => $teacher->id))
                              ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;
         }
         else{
