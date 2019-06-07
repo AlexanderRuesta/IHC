@@ -10,6 +10,6 @@ class Course extends Model
 
     public function programming()
     {
-        return $this->belongsTo(Programming::class);
+        return $this->belongsTo(Programming::class,'id','course_id');
     }
 }

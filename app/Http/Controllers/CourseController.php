@@ -19,14 +19,18 @@ class CourseController extends Controller
         ])->first();
             
         if($course !== null)
-        {
+        {   
+            $programmings = $course->programming;
+            $programmings->teachers;
+
+            // echo json_encode($course);
             return response()->json($course)
-                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
         }
         else{
             // return json_encode(null);
             return response()->json(null)
-                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
+                            ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
         }
     }
 }
