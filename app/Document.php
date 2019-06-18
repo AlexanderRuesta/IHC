@@ -10,4 +10,8 @@ class Document extends Model
     {
         return $this->belongsToMany(Programming::class, 'programmings_documents', 'document_id', 'programming_id');
     }
+
+    public function saveDocument($nombre,$file){
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+    }
 }
