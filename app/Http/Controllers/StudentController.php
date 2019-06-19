@@ -35,5 +35,24 @@ class StudentController extends Controller
                              ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;;
         }
     }
+
+    public function updateData(Request $request)
+    {
+        
+        $id = $request->id;
+    
+        $student = Student::findOrFail($id)->update([
+            'name'=>$request->nombres,
+            'surname' => $request->apellidos,
+            'address' =>  $request->dir
+        ]);
+        
+        echo json_encode($student);
+        // $document->name = $nombre;
+        // $document->link = url('/').'/api/uploads/'.$nombre;
+
+        // $document->save();
+        // echo json_encode($request->all());
+    }
 }
 

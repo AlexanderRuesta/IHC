@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/login/', 'LoginController@login');
 Route::get('/course/', 'CourseController@getCourse');
 Route::get('/student/', 'StudentController@getStudent');
+Route::post('/studentupdate/', 'StudentController@updateData');
 Route::get('/teacher/', 'TeacherController@getTeacher');
 Route::post('/document/', 'DocumentController@saveDocument');
 Route::get('/uploads/{file}', function ($file) {
