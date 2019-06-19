@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,10 @@ Route::get('/course/', 'CourseController@getCourse');
 Route::get('/student/', 'StudentController@getStudent');
 Route::get('/teacher/', 'TeacherController@getTeacher');
 Route::post('/document/', 'DocumentController@saveDocument');
+Route::get('/uploads/{file}', function ($file) {
+    return Storage::response($file);
 
+});
 
 
 
